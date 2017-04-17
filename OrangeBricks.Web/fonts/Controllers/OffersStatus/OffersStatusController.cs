@@ -7,6 +7,8 @@ using System.Net;
 using System.Web;
 using System.Web.Mvc;
 using OrangeBricks.Web.Models;
+using Microsoft.AspNet.Identity;
+
 
 namespace OrangeBricks.Web.Controllers.Offers
 {
@@ -17,7 +19,8 @@ namespace OrangeBricks.Web.Controllers.Offers
         // GET: OffersStatus
         public ActionResult Index()
         {
-            return View(db.Offers.ToList());
+            var blah = User.Identity.GetUserId();
+            return View(db.Offers.Where(offer => offer.BuyerUserId == blah).ToList());
         }
 
         // GET: OffersStatus/Details/5

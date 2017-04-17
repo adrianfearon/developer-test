@@ -1,13 +1,13 @@
 ﻿@model IEnumerable<OrangeBricks.Web.Models.Offer>
 
 @{
-    ViewBag.Title = "My Offers";
+    ViewBag.Title = "My Offers Status";
 }
 
-<h2>My Offers Status</h2>
+<h2>Index</h2>
 
 <p>
-  
+    @Html.ActionLink("Create New", "Create")
 </p>
 <table class="table">
     <tr>
@@ -32,14 +32,7 @@
             @Html.DisplayFor(modelItem => item.Amount)
         </td>
         <td>
-      
-                   
-
-         
-        @Html.DisplayFor(modelItem => item.Status)    
-            
-            
-            
+            @Html.DisplayFor(modelItem => item.Status)
         </td>
         <td>
             @Html.DisplayFor(modelItem => item.CreatedAt)
@@ -48,7 +41,9 @@
             @Html.DisplayFor(modelItem => item.UpdatedAt)
         </td>
         <td>
-       
+            @Html.ActionLink("Edit", "Edit", new { id=item.Id }) |
+            @Html.ActionLink("Details", "Details", new { id=item.Id }) |
+            @Html.ActionLink("Delete", "Delete", new { id=item.Id })
         </td>
     </tr>
 }

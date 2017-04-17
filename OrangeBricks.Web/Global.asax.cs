@@ -14,6 +14,7 @@ using OrangeBricks.Web.Models;
 using SimpleInjector;
 using SimpleInjector.Diagnostics;
 using SimpleInjector.Integration.Web.Mvc;
+using System.Data.Entity;
 
 namespace OrangeBricks.Web
 {
@@ -41,6 +42,9 @@ namespace OrangeBricks.Web
 
             DependencyResolver.SetResolver(
                 new SimpleInjectorDependencyResolver(container));
+
+        
+
         }
     }
 }

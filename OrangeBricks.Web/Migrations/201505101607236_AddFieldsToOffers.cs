@@ -10,6 +10,7 @@ namespace OrangeBricks.Web.Migrations
             AddColumn("dbo.Offers", "Status", c => c.Int(nullable: false));
             AddColumn("dbo.Offers", "CreatedAt", c => c.DateTime(nullable: false));
             AddColumn("dbo.Offers", "UpdatedAt", c => c.DateTime(nullable: false));
+            AddColumn("dbo.Offers", "BuyerUserId", c => c.String(nullable: false));
         }
         
         public override void Down()
@@ -17,6 +18,7 @@ namespace OrangeBricks.Web.Migrations
             DropColumn("dbo.Offers", "UpdatedAt");
             DropColumn("dbo.Offers", "CreatedAt");
             DropColumn("dbo.Offers", "Status");
+            DropColumn("dbo.Offers", "BuyerUserId");
         }
     }
 }

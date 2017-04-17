@@ -20,6 +20,7 @@
     <IISExpressAnonymousAuthentication />
     <IISExpressWindowsAuthentication />
     <IISExpressUseClassicPipelineMode />
+    <UseGlobalApplicationHostFile />
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
     <DebugSymbols>true</DebugSymbols>
@@ -170,31 +171,32 @@
     <Compile Include="App_Start\RouteConfig.cs" />
     <Compile Include="App_Start\Startup.Auth.cs" />
     <Compile Include="Attributes\OrangeBricksAuthorizeAttribute.cs" />
-    <Compile Include="Controllers\AccountController.cs" />
-    <Compile Include="Controllers\HomeController.cs" />
-    <Compile Include="Controllers\Offers\Builders\OffersOnPropertyViewModelBuilder.cs" />
-    <Compile Include="Controllers\Offers\Commands\AcceptOfferCommand.cs" />
-    <Compile Include="Controllers\Offers\Commands\AcceptOfferCommandHandler.cs" />
-    <Compile Include="Controllers\Offers\Commands\RejectOfferCommand.cs" />
-    <Compile Include="Controllers\Offers\Commands\RejectOfferCommandHandler.cs" />
-    <Compile Include="Controllers\Offers\OffersController.cs" />
-    <Compile Include="Controllers\Offers\ViewModels\OffersOnPropertyViewModel.cs" />
-    <Compile Include="Controllers\Property\Builders\MakeOfferViewModelBuilder.cs" />
-    <Compile Include="Controllers\Property\Builders\MyPropertiesViewModelBuilder.cs" />
-    <Compile Include="Controllers\Property\Builders\PropertiesQuery.cs" />
-    <Compile Include="Controllers\Property\Builders\PropertiesViewModelBuilder.cs" />
-    <Compile Include="Controllers\Property\Commands\CreatePropertyCommand.cs" />
-    <Compile Include="Controllers\Property\Commands\CreatePropertyCommandHandler.cs" />
-    <Compile Include="Controllers\Property\Commands\ListPropertyCommand.cs" />
-    <Compile Include="Controllers\Property\Commands\ListPropertyCommandHandler.cs" />
-    <Compile Include="Controllers\Property\Commands\MakeOfferCommand.cs" />
-    <Compile Include="Controllers\Property\Commands\MakeOfferCommandHandler.cs" />
-    <Compile Include="Controllers\Property\PropertyController.cs" />
-    <Compile Include="Controllers\Property\ViewModels\CreatePropertyViewModel.cs" />
-    <Compile Include="Controllers\Property\ViewModels\MakeOfferViewModel.cs" />
-    <Compile Include="Controllers\Property\ViewModels\MyPropertiesViewModel.cs" />
-    <Compile Include="Controllers\Property\ViewModels\PropertiesViewModel.cs" />
-    <Compile Include="Controllers\Property\ViewModels\PropertyViewModel.cs" />
+    <Compile Include="fonts\Controllers\AccountController.cs" />
+    <Compile Include="fonts\Controllers\HomeController.cs" />
+    <Compile Include="fonts\Controllers\Offers\Builders\OffersOnPropertyViewModelBuilder.cs" />
+    <Compile Include="fonts\Controllers\Offers\Commands\AcceptOfferCommand.cs" />
+    <Compile Include="fonts\Controllers\Offers\Commands\AcceptOfferCommandHandler.cs" />
+    <Compile Include="fonts\Controllers\Offers\Commands\RejectOfferCommand.cs" />
+    <Compile Include="fonts\Controllers\Offers\Commands\RejectOfferCommandHandler.cs" />
+    <Compile Include="fonts\Controllers\Offers\OffersController.cs" />
+    <Compile Include="fonts\Controllers\OffersStatus\OffersStatusController.cs" />
+    <Compile Include="fonts\Controllers\Offers\ViewModels\OffersOnPropertyViewModel.cs" />
+    <Compile Include="fonts\Controllers\Property\Builders\MakeOfferViewModelBuilder.cs" />
+    <Compile Include="fonts\Controllers\Property\Builders\MyPropertiesViewModelBuilder.cs" />
+    <Compile Include="fonts\Controllers\Property\Builders\PropertiesQuery.cs" />
+    <Compile Include="fonts\Controllers\Property\Builders\PropertiesViewModelBuilder.cs" />
+    <Compile Include="fonts\Controllers\Property\Commands\CreatePropertyCommand.cs" />
+    <Compile Include="fonts\Controllers\Property\Commands\CreatePropertyCommandHandler.cs" />
+    <Compile Include="fonts\Controllers\Property\Commands\ListPropertyCommand.cs" />
+    <Compile Include="fonts\Controllers\Property\Commands\ListPropertyCommandHandler.cs" />
+    <Compile Include="fonts\Controllers\Property\Commands\MakeOfferCommand.cs" />
+    <Compile Include="fonts\Controllers\Property\Commands\MakeOfferCommandHandler.cs" />
+    <Compile Include="fonts\Controllers\Property\PropertyController.cs" />
+    <Compile Include="fonts\Controllers\Property\ViewModels\CreatePropertyViewModel.cs" />
+    <Compile Include="fonts\Controllers\Property\ViewModels\MakeOfferViewModel.cs" />
+    <Compile Include="fonts\Controllers\Property\ViewModels\MyPropertiesViewModel.cs" />
+    <Compile Include="fonts\Controllers\Property\ViewModels\PropertiesViewModel.cs" />
+    <Compile Include="fonts\Controllers\Property\ViewModels\PropertyViewModel.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
@@ -277,12 +279,12 @@
     <Content Include="Views\Account\_SetPasswordPartial.cshtml" />
     <Content Include="Views\Account\Login.cshtml" />
     <Content Include="Views\Account\Register.cshtml" />
-    <Content Include="Views\Manage\AddPhoneNumber.cshtml" />
-    <Content Include="Views\Manage\ChangePassword.cshtml" />
-    <Content Include="Views\Manage\Index.cshtml" />
-    <Content Include="Views\Manage\ManageLogins.cshtml" />
-    <Content Include="Views\Manage\SetPassword.cshtml" />
-    <Content Include="Views\Manage\VerifyPhoneNumber.cshtml" />
+    <Content Include="Views\Home\Manage\AddPhoneNumber.cshtml" />
+    <Content Include="Views\Home\Manage\ChangePassword.cshtml" />
+    <Content Include="Views\Home\Manage\Index.cshtml" />
+    <Content Include="Views\Home\Manage\ManageLogins.cshtml" />
+    <Content Include="Views\Home\Manage\SetPassword.cshtml" />
+    <Content Include="Views\Home\Manage\VerifyPhoneNumber.cshtml" />
     <Content Include="Views\Shared\Lockout.cshtml" />
     <Content Include="Views\Shared\_LoginPartial.cshtml" />
     <Content Include="Views\Property\Create.cshtml" />
@@ -291,6 +293,22 @@
     <Content Include="Views\Property\MakeOffer.cshtml" />
     <Content Include="Views\Offers\OnProperty.cshtml" />
     <None Include="Views\Account\UnAuthorized.cshtml" />
+    <Content Include="Views\Offers\OfferStatus.cshtml" />
+    <Content Include="Views\Offers\Create.cshtml" />
+    <Content Include="Views\Offers\Delete.cshtml" />
+    <Content Include="Views\Offers\Details.cshtml" />
+    <Content Include="Views\Offers\Edit.cshtml" />
+    <Content Include="Views\Offers\Index.cshtml" />
+    <Content Include="Views\OffersStatus\Create.cshtml" />
+    <Content Include="Views\OffersStatus\Delete.cshtml" />
+    <Content Include="Views\OffersStatus\Details.cshtml" />
+    <Content Include="Views\OffersStatus\Edit.cshtml" />
+    <Content Include="Views\OffersStatus\Index.cshtml" />
+    <Content Include="Views\Offers2\Create.cshtml" />
+    <Content Include="Views\Offers2\Delete.cshtml" />
+    <Content Include="Views\Offers2\Details.cshtml" />
+    <Content Include="Views\Offers2\Edit.cshtml" />
+    <Content Include="Views\Offers2\Index.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
